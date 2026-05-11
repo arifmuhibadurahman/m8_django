@@ -138,3 +138,9 @@ LEAFLET_CONFIG = {
     'DEFAULT_CENTER': (-7.760030, 110.376214),
     'DEFAULT_ZOOM': 16,
 }
+
+
+# Konfigurasi untuk library GIS di server Linux (Railway/Render)
+if os.environ.get('RAILWAY_ENVIRONMENT'):
+    GDAL_LIBRARY_PATH = '/usr/lib/libgdal.so'
+    GEOS_LIBRARY_PATH = '/usr/lib/libgeos_c.so'
