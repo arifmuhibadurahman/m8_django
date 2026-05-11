@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "webgisdesa/webgisdesa/wsgi.py",
+      "use": "@vercel/python",
+      "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/static/(.*)",
+      "dest": "webgisdesa/static/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "webgisdesa/webgisdesa/wsgi.py"
+    }
+  ]
+}
